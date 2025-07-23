@@ -41,22 +41,32 @@
             padding: 1rem;
             text-align: center;
         }
-        .product img {
-            max-width: 100%;
+        .product-image {
+            width: 100%;
             height: 180px;
-            object-fit: contain;
             margin-bottom: 1rem;
-            background: #f0f0f0;
-            border: 1px solid #ddd;
-        }
-        .product img::before {
-            content: "📦 " attr(alt);
-            display: block;
-            text-align: center;
-            padding: 60px 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 14px;
-            color: #666;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
         }
+        .echo-dot { background: linear-gradient(135deg, #ff9900, #ffb84d); }
+        .roku { background: linear-gradient(135deg, #232f3e, #4a5568); }
+        .kindle { background: linear-gradient(135deg, #333333, #555555); }
+        .airpods { background: linear-gradient(135deg, #ffffff, #f0f0f0); color: #000; }
+        .instant-pot { background: linear-gradient(135deg, #cc0000, #ff3333); }
+        .samsung { background: linear-gradient(135deg, #0066cc, #3399ff); }
+        .titanium { background: linear-gradient(135deg, #666666, #999999); }
+        .fryer { background: linear-gradient(135deg, #8B4513, #CD853F); }
+        .filter { background: linear-gradient(135deg, #228B22, #32CD32); }
+        .banana { background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; }
         .product-title {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
@@ -92,61 +102,81 @@
         <h2>Productos Destacados</h2>
         <div class="product-list">
             <div class="product">
-                <img src="https://via.placeholder.com/300x180/ff9900/ffffff?text=Echo+Dot+5ta+Gen" alt="Echo Dot 5ta Gen Bundle">
+                <div class="product-image echo-dot">
+                    📱 Echo Dot 5ta Gen<br>+ Battery Base
+                </div>
                 <div class="product-title">Echo Dot (5ta Gen, 2022) Bundle + Battery Base</div>
                 <p>Incluye Echo Dot (5ta Gen, 2022) y base de batería para portabilidad. Disfruta de Alexa, música y control inteligente en cualquier lugar de tu casa, sin cables.</p>
                 <a class="product-link" href="https://amzn.to/4m4N6y3" target="_blank">Ver en Amazon</a>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x180/232f3e/ffffff?text=Roku+4K" alt="Roku Streaming Device">
+                <div class="product-image roku">
+                    📺 Roku Streaming<br>Device 4K
+                </div>
                 <div class="product-title">Roku Streaming Device 4K</div>
                 <p>Dispositivo de streaming Roku 4K, compatible con Alexa, Apple HomeKit y Google Home. Incluye control remoto por voz y acceso a miles de canales y apps.</p>
                 <a class="product-link" href="https://amzn.to/4lEdhMf" target="_blank">Ver en Amazon</a>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x180/333333/ffffff?text=Kindle+Paperwhite" alt="Kindle Paperwhite">
+                <div class="product-image kindle">
+                    📚 Kindle<br>Paperwhite 11th Gen
+                </div>
                 <div class="product-title">Kindle Paperwhite (11th Gen)</div>
                 <p>Lector de libros electrónicos con pantalla de 6.8", luz cálida ajustable y resistente al agua.</p>
                 <a class="product-link" href="https://amzn.to/44TSKxz" target="_blank">Ver en Amazon</a>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x180/ffffff/000000?text=AirPods+Pro+2" alt="AirPods Pro 2">
+                <div class="product-image airpods">
+                    🎧 AirPods Pro 2<br>(2024)
+                </div>
                 <div class="product-title">Apple AirPods Pro (2da generación, 2024)</div>
                 <p>Audífonos inalámbricos con cancelación de ruido, modo transparencia y audio personalizado.</p>
                 <a class="product-link" href="https://amzn.to/4o0voh2" target="_blank">Ver en Amazon</a>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x180/cc0000/ffffff?text=Instant+Pot" alt="Instant Pot Duo">
+                <div class="product-image instant-pot">
+                    🍲 Instant Pot<br>Multi-Cooker
+                </div>
                 <div class="product-title">Instant Pot Electric Multi-Cooker</div>
                 <p>Olla eléctrica multifuncional 7-en-1, ideal para presión, cocción lenta, arroz, vapor y más.</p>
                 <a class="product-link" href="https://amzn.to/3TVsUCT" target="_blank">Ver en Amazon</a>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x180/0066cc/ffffff?text=Samsung+Galaxy+Tab" alt="Samsung Galaxy Tab A8">
+                <div class="product-image samsung">
+                    📱 Samsung Galaxy<br>Tab A8 (2024)
+                </div>
                 <div class="product-title">Samsung Galaxy Tab A8 (2024)</div>
                 <p>Tablet Android de 10.5", altavoces Dolby Atmos, batería de larga duración y chipset mejorado.</p>
                 <a class="product-link" href="https://amzn.to/4kXhaee" target="_blank">Ver en Amazon</a>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x180/666666/ffffff?text=Titanium+Boards" alt="Titanium Cutting Boards">
+                <div class="product-image titanium">
+                    🔪 Titanium<br>Cutting Boards
+                </div>
                 <div class="product-title">Titanium Cutting Boards Kitchen Set</div>
                 <p>Set de tablas de cortar de titanio, resistentes, aptas para lavavajillas y uso profesional.</p>
                 <a class="product-link" href="https://amzn.to/4kUmDm6" target="_blank">Ver en Amazon</a>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x180/brown/ffffff?text=Fryer+Liners" alt="Small Fryer Liners">
+                <div class="product-image fryer">
+                    🍟 Fryer Liners<br>120 Pieces
+                </div>
                 <div class="product-title">Small Fryer Liners 120Pcs</div>
                 <p>120 piezas de papel desechable para freidora de aire, resistentes al calor y fáciles de usar.</p>
                 <a class="product-link" href="https://amzn.to/4m1CfoC" target="_blank">Ver en Amazon</a>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x180/green/ffffff?text=Air+Filter" alt="Simply MervFilters 8x24x1">
+                <div class="product-image filter">
+                    🌬️ Air Filter<br>8x24x1 MERV
+                </div>
                 <div class="product-title">Simply MervFilters 8x24x1 Filter</div>
                 <p>Filtro de aire para horno y aire acondicionado, tamaño 8x24x1, alta eficiencia MERV.</p>
                 <a class="product-link" href="https://amzn.to/4lRBQWb" target="_blank">Ver en Amazon</a>
             </div>
             <div class="product">
-                <img src="https://via.placeholder.com/300x180/yellow/000000?text=Banana+Boat" alt="Banana Boat Sunscreen">
+                <div class="product-image banana">
+                    ☀️ Banana Boat<br>Sunscreen SPF 50
+                </div>
                 <div class="product-title">Banana Boat Sunscreen Performance</div>
                 <p>Protector solar Banana Boat, SPF 50, resistente al agua y de amplio espectro para deportes y actividades al aire libre.</p>
                 <a class="product-link" href="https://amzn.to/44IVVId" target="_blank">Ver en Amazon</a>
