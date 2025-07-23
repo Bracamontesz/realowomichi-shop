@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realowomichi | Recomendaciones Amazon</title>
+    <title>Realowomichi | Las Mejores Ofertas de Amazon México 2025</title>
+    <meta name="description" content="Descubre las mejores ofertas, promociones y productos más vendidos de Amazon México. Reseñas detalladas, comparativas y guías de compra para encontrar los mejores deals.">
     <style>
         * {
             margin: 0;
@@ -12,205 +13,248 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 0;
+            background: #f8f9fa;
             line-height: 1.6;
+            color: #333;
         }
+        
+        /* Header */
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #232f3e 0%, #37475a 100%);
             color: #fff;
-            padding: 3rem 0;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .container {
+        .header-content {
             max-width: 1200px;
-            margin: 3rem auto;
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            padding: 3rem;
-            backdrop-filter: blur(10px);
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
         }
-        h1 {
-            margin: 0;
-            font-size: 3rem;
+        .logo {
+            font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 0.5rem;
         }
-        .subtitle {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
+        .tagline {
+            font-size: 1.1rem;
             opacity: 0.9;
         }
-        h2 {
+        
+        /* Navigation */
+        .nav-bar {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .nav-link {
+            color: #232f3e;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background: #ff9900;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 3rem 0;
+            text-align: center;
+            color: white;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #ff9900;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
+        }
+        
+        /* Content Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        .content-section {
+            margin-bottom: 4rem;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            color: #232f3e;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
             text-align: center;
             margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: #2c3e50;
-            position: relative;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        h2::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-            margin: 1rem auto;
-            border-radius: 2px;
+        
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
-        .product-list {
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #232f3e;
+        }
+        .category-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .category-link {
+            display: inline-block;
+            background: #ff9900;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .category-link:hover {
+            background: #e68a00;
+            transform: translateY(-1px);
+        }
+        
+        /* Info Section */
+        .info-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            gap: 3rem;
+            margin-top: 2rem;
         }
-        .product {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            padding: 1.5rem;
+        .info-item {
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #f0f0f0;
-            position: relative;
-            overflow: hidden;
         }
-        .product::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-        }
-        .product:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        .product-image {
-            width: 100%;
-            height: 200px;
-            margin-bottom: 1.5rem;
-            border: none;
-            border-radius: 12px;
+        .info-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff9900, #ff6b00);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+        .info-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #232f3e;
+        }
+        .info-description {
+            color: #666;
+        }
+        
+        /* Featured Products */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
             font-weight: 600;
             text-align: center;
-            color: #fff;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .product-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.1);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .product:hover .product-image::before {
-            opacity: 1;
-        }
-        .echo-dot { 
-            background: linear-gradient(135deg, #ff9500, #ff6b00);
-            box-shadow: 0 4px 15px rgba(255, 149, 0, 0.3);
-        }
-        .roku { 
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-        .kindle { 
-            background: linear-gradient(135deg, #434343, #000000);
-            box-shadow: 0 4px 15px rgba(67, 67, 67, 0.3);
-        }
-        .airpods { 
-            background: linear-gradient(135deg, #ffecd2, #fcb69f);
-            color: #333;
-            box-shadow: 0 4px 15px rgba(255, 236, 210, 0.4);
-        }
-        .instant-pot { 
-            background: linear-gradient(135deg, #ff416c, #ff4b2b);
-            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
-        }
-        .samsung { 
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
-        }
-        .titanium { 
-            background: linear-gradient(135deg, #bdc3c7, #2c3e50);
-            box-shadow: 0 4px 15px rgba(189, 195, 199, 0.3);
-        }
-        .fryer { 
-            background: linear-gradient(135deg, #d2691e, #8b4513);
-            box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
-        }
-        .filter { 
-            background: linear-gradient(135deg, #56ab2f, #a8e6cf);
-            box-shadow: 0 4px 15px rgba(86, 171, 47, 0.3);
-        }
-        .banana { 
-            background: linear-gradient(135deg, #f7b733, #fc4a1a);
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(247, 183, 51, 0.3);
-        }
-        .product-title {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            color: #2c3e50;
-            line-height: 1.4;
-        }
-        .product-description {
-            color: #7f8c8d;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .product-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: #fff;
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        .product-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        .product-link:hover::before {
-            left: 100%;
-        }
-        .product-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
-            background: linear-gradient(135deg, #ee5a24, #ff6b6b);
-        }
-        .badge {
+        .product-badge {
             position: absolute;
             top: 15px;
             right: 15px;
@@ -221,133 +265,228 @@
             font-size: 0.8rem;
             font-weight: 600;
         }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: #fff;
-            margin-top: 3rem;
-            border-radius: 20px 20px 0 0;
+        .product-content {
+            padding: 1.5rem;
         }
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #232f3e;
+        }
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .product-link {
+            display: block;
+            background: #ff9900;
+            color: white;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .product-link:hover {
+            background: #e68a00;
+        }
+        
+        /* Specific product colors */
+        .echo-dot { background: linear-gradient(135deg, #ff9500, #ff6b00); }
+        .roku { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .kindle { background: linear-gradient(135deg, #434343, #000000); }
+        
+        /* Footer */
+        footer {
+            background: #232f3e;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .footer-link {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+            color: #ff9900;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                margin: 1rem;
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .product-list {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1.1rem; }
+            .container { padding: 2rem 1rem; }
+            .nav-content { gap: 1rem; }
+            .categories-grid { grid-template-columns: 1fr; }
+            .products-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Realowomichi</h1>
-        <p class="subtitle">🛍️ Las mejores ofertas de Amazon seleccionadas para ti</p>
-    </header>
-    <div class="container">
-        <h2>⭐ Productos Más Vendidos</h2>
-        <div class="product-list">
-            <div class="product">
-                <div class="badge">OFERTA</div>
-                <div class="product-image echo-dot">
-                    � ALEXA<br>Echo Dot 5ta Gen<br>+ Base Portátil
-                </div>
-                <div class="product-title">Echo Dot (5ta Gen, 2022) Bundle + Battery Base</div>
-                <div class="product-description">Incluye Echo Dot (5ta Gen, 2022) y base de batería para portabilidad. Disfruta de Alexa, música y control inteligente en cualquier lugar de tu casa, sin cables.</div>
-                <a class="product-link" href="https://amzn.to/4m4N6y3" target="_blank">🛒 Comprar en Amazon</a>
-            </div>
-            <div class="product">
-                <div class="badge">POPULAR</div>
-                <div class="product-image roku">
-                    📺 STREAMING<br>Roku Device 4K<br>Miles de Apps
-                </div>
-                <div class="product-title">Roku Streaming Device 4K</div>
-                <div class="product-description">Dispositivo de streaming Roku 4K, compatible con Alexa, Apple HomeKit y Google Home. Incluye control remoto por voz y acceso a miles de canales y apps.</div>
-                <a class="product-link" href="https://amzn.to/4lEdhMf" target="_blank">🛒 Comprar en Amazon</a>
-            </div>
-            <div class="product">
-                <div class="badge">BESTSELLER</div>
-                <div class="product-image kindle">
-                    � KINDLE<br>Paperwhite 11th Gen<br>Resistente al Agua
-                </div>
-                <div class="product-title">Kindle Paperwhite (11th Gen)</div>
-                <div class="product-description">Lector de libros electrónicos con pantalla de 6.8", luz cálida ajustable y resistente al agua.</div>
-                <a class="product-link" href="https://amzn.to/44TSKxz" target="_blank">🛒 Comprar en Amazon</a>
-            </div>
-            <div class="product">
-                <div class="badge">NUEVO</div>
-                <div class="product-image airpods">
-                    🎧 APPLE<br>AirPods Pro 2<br>Cancelación de Ruido
-                </div>
-                <div class="product-title">Apple AirPods Pro (2da generación, 2024)</div>
-                <div class="product-description">Audífonos inalámbricos con cancelación de ruido, modo transparencia y audio personalizado.</div>
-                <a class="product-link" href="https://amzn.to/4o0voh2" target="_blank">🛒 Comprar en Amazon</a>
-            </div>
-            <div class="product">
-                <div class="badge">COCINA</div>
-                <div class="product-image instant-pot">
-                    🍲 INSTANT POT<br>Multi-Cooker 7-en-1<br>Cocina Rápida
-                </div>
-                <div class="product-title">Instant Pot Electric Multi-Cooker</div>
-                <div class="product-description">Olla eléctrica multifuncional 7-en-1, ideal para presión, cocción lenta, arroz, vapor y más.</div>
-                <a class="product-link" href="https://amzn.to/3TVsUCT" target="_blank">🛒 Comprar en Amazon</a>
-            </div>
-            <div class="product">
-                <div class="badge">TABLET</div>
-                <div class="product-image samsung">
-                    📱 SAMSUNG<br>Galaxy Tab A8<br>Dolby Atmos
-                </div>
-                <div class="product-title">Samsung Galaxy Tab A8 (2024)</div>
-                <div class="product-description">Tablet Android de 10.5", altavoces Dolby Atmos, batería de larga duración y chipset mejorado.</div>
-                <a class="product-link" href="https://amzn.to/4kXhaee" target="_blank">🛒 Comprar en Amazon</a>
-            </div>
-            <div class="product">
-                <div class="badge">HOGAR</div>
-                <div class="product-image titanium">
-                    🔪 TITANIUM<br>Cutting Boards<br>Uso Profesional
-                </div>
-                <div class="product-title">Titanium Cutting Boards Kitchen Set</div>
-                <div class="product-description">Set de tablas de cortar de titanio, resistentes, aptas para lavavajillas y uso profesional.</div>
-                <a class="product-link" href="https://amzn.to/4kUmDm6" target="_blank">🛒 Comprar en Amazon</a>
-            </div>
-            <div class="product">
-                <div class="badge">COCINA</div>
-                <div class="product-image fryer">
-                    🍟 FRYER LINERS<br>120 Piezas<br>Resistente al Calor
-                </div>
-                <div class="product-title">Small Fryer Liners 120Pcs</div>
-                <div class="product-description">120 piezas de papel desechable para freidora de aire, resistentes al calor y fáciles de usar.</div>
-                <a class="product-link" href="https://amzn.to/4m1CfoC" target="_blank">🛒 Comprar en Amazon</a>
-            </div>
-            <div class="product">
-                <div class="badge">HOGAR</div>
-                <div class="product-image filter">
-                    🌬️ AIR FILTER<br>8x24x1 MERV<br>Alta Eficiencia
-                </div>
-                <div class="product-title">Simply MervFilters 8x24x1 Filter</div>
-                <div class="product-description">Filtro de aire para horno y aire acondicionado, tamaño 8x24x1, alta eficiencia MERV.</div>
-                <a class="product-link" href="https://amzn.to/4lRBQWb" target="_blank">🛒 Comprar en Amazon</a>
-            </div>
-            <div class="product">
-                <div class="badge">VERANO</div>
-                <div class="product-image banana">
-                    ☀️ BANANA BOAT<br>Sunscreen SPF 50<br>Resistente al Agua
-                </div>
-                <div class="product-title">Banana Boat Sunscreen Performance</div>
-                <div class="product-description">Protector solar Banana Boat, SPF 50, resistente al agua y de amplio espectro para deportes y actividades al aire libre.</div>
-                <a class="product-link" href="https://amzn.to/44IVVId" target="_blank">🛒 Comprar en Amazon</a>
-            </div>
+        <div class="header-content">
+            <div class="logo">🛍️ Realowomichi</div>
+            <div class="tagline">Tu guía confiable para las mejores ofertas de Amazon México</div>
         </div>
+    </header>
+
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <a href="#inicio" class="nav-link">🏠 Inicio</a>
+            <a href="#categorias" class="nav-link">📱 Categorías</a>
+            <a href="#ofertas" class="nav-link">🔥 Ofertas del Día</a>
+            <a href="#guias" class="nav-link">📖 Guías de Compra</a>
+            <a href="#contacto" class="nav-link">✉️ Contacto</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Las Mejores Ofertas de Amazon México</h1>
+            <p>Descubre productos seleccionados, comparativas detalladas y ofertas exclusivas. Te ayudamos a encontrar los mejores deals y ahorrar en tus compras.</p>
+            <a href="#ofertas" class="cta-button">🔥 Ver Ofertas del Día</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="content-section" id="categorias">
+            <h2 class="section-title">🛒 Explora Nuestras Categorías Principales</h2>
+            <p class="section-subtitle">Encuentra productos cuidadosamente seleccionados en las categorías más populares de Amazon</p>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">📱</div>
+                    <h3 class="category-title">Tecnología</h3>
+                    <p class="category-description">Smartphones, tablets, laptops y accesorios tecnológicos con las mejores ofertas</p>
+                    <a href="https://amzn.to/3SelBWl" target="_blank" class="category-link">Ver Productos</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏠</div>
+                    <h3 class="category-title">Hogar y Cocina</h3>
+                    <p class="category-description">Electrodomésticos, utensilios de cocina y productos para el hogar</p>
+                    <a href="https://amzn.to/3WrWdPq" target="_blank" class="category-link">Ver Productos</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🎧</div>
+                    <h3 class="category-title">Audio y Video</h3>
+                    <p class="category-description">Auriculares, altavoces, dispositivos de streaming y entretenimiento</p>
+                    <a href="https://amzn.to/46dvF82" target="_blank" class="category-link">Ver Productos</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⌚</div>
+                    <h3 class="category-title">Relojes y Accesorios</h3>
+                    <p class="category-description">Smartwatches, relojes deportivos y accesorios de moda</p>
+                    <a href="https://amzn.to/3WagveR" target="_blank" class="category-link">Ver Productos</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📺</div>
+                    <h3 class="category-title">TV y Monitores</h3>
+                    <p class="category-description">Televisores smart, monitores gaming y pantallas para trabajo</p>
+                    <a href="https://amzn.to/3W68iIN" target="_blank" class="category-link">Ver Productos</a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📷</div>
+                    <h3 class="category-title">Fotografía</h3>
+                    <p class="category-description">Cámaras, lentes, accesorios fotográficos y equipo profesional</p>
+                    <a href="https://amzn.to/4f74eAy" target="_blank" class="category-link">Ver Productos</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2 class="section-title">¿Por Qué Confiar en Nosotros?</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">🔍</div>
+                    <h3 class="info-title">Análisis Detallado</h3>
+                    <p class="info-description">Revisamos cada producto minuciosamente, comparamos precios y analizamos reseñas reales de usuarios.</p>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">💰</div>
+                    <h3 class="info-title">Mejores Precios</h3>
+                    <p class="info-description">Monitoreamos constantemente los precios para traerte las mejores ofertas y descuentos disponibles.</p>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⭐</div>
+                    <h3 class="info-title">Calidad Garantizada</h3>
+                    <p class="info-description">Solo recomendamos productos con altas calificaciones y comentarios positivos de usuarios verificados.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="ofertas">
+            <h2 class="section-title">🔥 Productos Destacados del Mes</h2>
+            <p class="section-subtitle">Selección especial de productos con las mejores ofertas y mayor demanda</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image echo-dot">
+                        <div class="product-badge">OFERTA</div>
+                        🔊 ALEXA<br>Echo Dot 5ta Gen<br>+ Base Portátil
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Echo Dot (5ta Gen, 2022) Bundle + Battery Base</h3>
+                        <p class="product-description">El asistente inteligente más popular con base de batería incluida. Control por voz, música en streaming y domótica en cualquier lugar de tu casa.</p>
+                        <a href="https://amzn.to/4m4N6y3" target="_blank" class="product-link">🛒 Ver en Amazon</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image roku">
+                        <div class="product-badge">POPULAR</div>
+                        📺 STREAMING<br>Roku Device 4K<br>Miles de Apps
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Roku Streaming Device 4K</h3>
+                        <p class="product-description">Convierte cualquier TV en smart TV. Compatible con todos los servicios de streaming, control por voz y calidad 4K HDR.</p>
+                        <a href="https://amzn.to/4lEdhMf" target="_blank" class="product-link">🛒 Ver en Amazon</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image kindle">
+                        <div class="product-badge">BESTSELLER</div>
+                        📖 KINDLE<br>Paperwhite 11th Gen<br>Resistente al Agua
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Kindle Paperwhite (11th Gen)</h3>
+                        <p class="product-description">La mejor experiencia de lectura digital. Pantalla de 6.8", luz cálida ajustable, resistente al agua y batería de semanas.</p>
+                        <a href="https://amzn.to/44TSKxz" target="_blank" class="product-link">🛒 Ver en Amazon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-    <footer>
-        🛍️ &copy; 2025 Realowomichi | Las mejores recomendaciones de Amazon<br>
-        <small>Enlaces de afiliado - Ganamos una comisión por compras realizadas</small>
+
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Política de Privacidad</a>
+                <a href="#" class="footer-link">Términos de Uso</a>
+                <a href="#" class="footer-link">Contacto</a>
+                <a href="#" class="footer-link">Sobre Nosotros</a>
+            </div>
+            <p>&copy; 2025 Realowomichi. Todos los derechos reservados.</p>
+            <p><small>🔗 Sitio web de afiliados - Ganamos una comisión por compras realizadas a través de nuestros enlaces, sin costo adicional para ti.</small></p>
+        </div>
     </footer>
 </body>
 </html>
-
