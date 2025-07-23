@@ -1,0 +1,23 @@
+{
+  "name": "pamazon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bracamontesz/realowomichi-shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bracamontesz/realowomichi-shop/issues"
+  },
+  "homepage": "https://github.com/Bracamontesz/realowomichi-shop#readme",
+  "description": "",
+  "dependencies": {
+    "puppeteer": "^24.14.0"
+  }
+}

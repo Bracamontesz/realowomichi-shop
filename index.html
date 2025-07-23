@@ -1,10 +1,35 @@
 <!DOCTYPE html>
+<!-- Sitio web Realowomichi - Version 2025.07.22 -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realowomichi - Premium Products Store</title>
+    <meta name="description" content="Discover premium products, latest technology, and exclusive deals. Your trusted destination for quality shopping.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-color: #232F3E;
+            --secondary-color: #FF9900;
+            --accent-color: #FF9900;
+            --success-color: #27ae60;
+            --warning-color: #FF9900;
+            --light-bg: #ffffff;
+            --dark-bg: #232F3E;
+            --text-dark: #232F3E;
+            --text-light: #555;
+            --border-color: #e3e6e8;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,249 +37,768 @@
         }
         
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            color: var(--text-dark);
+            background: var(--light-bg);
+            overflow-x: hidden;
         }
         
-        .header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 50px;
+        /* Custom Navbar */
+        .navbar-custom {
+            background: #000;
+            border-bottom: 2px solid var(--secondary-color);
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
         }
         
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: bold;
+        .navbar-custom.scrolled {
+            background: #000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
         
-        .header p {
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #fff !important;
+            text-decoration: none;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: #fff !important;
+            margin: 0 0.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--accent-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #fff 0%, #FF9900 100%);
+            color: var(--primary-color);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
             font-size: 1.3rem;
+            opacity: 0.9;
             margin-bottom: 2rem;
+            font-weight: 300;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .btn-custom {
+            padding: 15px 40px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
         }
         
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
+        .btn-primary-custom {
+            background: var(--accent-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-primary-custom:hover {
+            background: #232F3E;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(35,47,62,0.15);
+        }
+        
+        .btn-outline-custom {
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--accent-color);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .feature-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Products Section */
+        .products-section {
+            padding: 100px 0;
+            background: var(--light-bg);
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .product-card {
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 20px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: none;
+            height: 100%;
         }
         
         .product-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
         
         .product-image {
-            height: 200px;
+            height: 250px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
             color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
             position: relative;
+            overflow: hidden;
         }
         
-        .product-1 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-        .product-2 { background: linear-gradient(135deg, #3498db, #2980b9); }
-        .product-3 { background: linear-gradient(135deg, #27ae60, #229954); }
-        .product-4 { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
-        .product-5 { background: linear-gradient(135deg, #f39c12, #e67e22); }
-        .product-6 { background: linear-gradient(135deg, #1abc9c, #16a085); }
-        
-        .badge {
+        .product-badge {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: rgba(0,0,0,0.8);
+            background: var(--accent-color);
             color: white;
-            padding: 8px 15px;
+            padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: bold;
+            font-weight: 600;
+            text-transform: uppercase;
         }
         
         .product-content {
-            padding: 30px;
+            padding: 2rem;
         }
         
         .product-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            line-height: 1.4;
         }
         
         .product-description {
-            color: #7f8c8d;
-            margin-bottom: 20px;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
         
         .product-price {
             font-size: 1.5rem;
-            font-weight: bold;
-            color: #27ae60;
-            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--success-color);
+            margin-bottom: 1.5rem;
         }
         
-        .btn {
-            display: inline-block;
-            background: #e74c3c;
+        .btn-product {
+            background: var(--primary-color);
             color: white;
-            padding: 15px 30px;
-            text-decoration: none;
+            border: none;
+            padding: 12px 30px;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
             width: 100%;
-            text-align: center;
         }
         
-        .btn:hover {
-            background: #c0392b;
+        .btn-product:hover {
+            background: var(--secondary-color);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
         }
         
-        .footer {
-            background: #2c3e50;
-            color: white;
+        /* Categories Section */
+        .categories-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem 2rem;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            height: 100%;
         }
         
-        .footer p {
-            font-size: 1.1rem;
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
         
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .category-description {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn-category {
+            background: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-category:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #000;
+            color: #fff;
+            padding: 10px 0 5px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .footer-link {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .footer-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #bdc3c7;
+        }
+        
+        /* Specific product gradients */
+        .product-1 { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+        .product-2 { background: linear-gradient(135deg, #3742fa, #2f3542); }
+        .product-3 { background: linear-gradient(135deg, #2ed573, #1e90ff); }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .header h1 { font-size: 2.5rem; }
-            .header p { font-size: 1.1rem; }
-            .products-grid { grid-template-columns: 1fr; gap: 20px; }
-            .product-content { padding: 20px; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            .section-title { font-size: 2.2rem; }
+            .btn-custom { padding: 12px 30px; }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🏪 Realowomichi</h1>
-        <p>Premium Products Store - Quality Guaranteed</p>
-    </div>
-    
-    <div class="container">
-        <div class="products-grid">
-            
-            <!-- Producto 1: Echo Dot -->
-            <div class="product-card">
-                <div class="product-image product-1">
-                    🎤
-                    <div class="badge">HOT</div>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Echo Dot (5th Gen) + Battery Base</h3>
-                    <p class="product-description">Smart speaker with Alexa, portable battery base included. Voice control, music streaming, and smart home automation anywhere.</p>
-                    <div class="product-price">From $99.99</div>
-                    <a href="https://amzn.to/4m4N6y3" target="_blank" class="btn">🛒 Buy on Amazon</a>
-                </div>
-            </div>
-            
-            <!-- Producto 2: Roku -->
-            <div class="product-card">
-                <div class="product-image product-2">
-                    📺
-                    <div class="badge">POPULAR</div>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Roku Streaming Device 4K</h3>
-                    <p class="product-description">Transform any TV into a smart TV. Compatible with all streaming services, voice remote, and 4K HDR quality.</p>
-                    <div class="product-price">From $49.99</div>
-                    <a href="https://amzn.to/4lEdhMf" target="_blank" class="btn">🛒 Buy on Amazon</a>
-                </div>
-            </div>
-            
-            <!-- Producto 3: Kindle -->
-            <div class="product-card">
-                <div class="product-image product-3">
-                    📚
-                    <div class="badge">BEST SELLER</div>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Kindle Paperwhite (11th Gen)</h3>
-                    <p class="product-description">Ultimate digital reading experience. 6.8" display, adjustable warm light, waterproof design, and weeks of battery life.</p>
-                    <div class="product-price">From $139.99</div>
-                    <a href="https://amzn.to/44TSKxz" target="_blank" class="btn">🛒 Buy on Amazon</a>
-                </div>
-            </div>
-            
-            <!-- Categoría 1: Technology -->
-            <div class="product-card">
-                <div class="product-image product-4">
-                    💻
-                    <div class="badge">CATEGORY</div>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Technology Collection</h3>
-                    <p class="product-description">Latest gadgets, smartphones, laptops, and tech accessories for modern lifestyle and productivity.</p>
-                    <div class="product-price">Explore Now</div>
-                    <a href="https://amzn.to/3SelBWl" target="_blank" class="btn">🔍 Browse Tech</a>
-                </div>
-            </div>
-            
-            <!-- Categoría 2: Home & Kitchen -->
-            <div class="product-card">
-                <div class="product-image product-5">
-                    🏠
-                    <div class="badge">CATEGORY</div>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Home & Kitchen</h3>
-                    <p class="product-description">Premium appliances, kitchen tools, and home essentials for your perfect home and cooking experience.</p>
-                    <div class="product-price">Discover More</div>
-                    <a href="https://amzn.to/3WrWdPq" target="_blank" class="btn">🔍 Browse Home</a>
-                </div>
-            </div>
-            
-            <!-- Categoría 3: Audio & Video -->
-            <div class="product-card">
-                <div class="product-image product-6">
-                    🎧
-                    <div class="badge">CATEGORY</div>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Audio & Video</h3>
-                    <p class="product-description">High-quality headphones, speakers, and entertainment devices for amazing audio and visual experiences.</p>
-                    <div class="product-price">Listen Now</div>
-                    <a href="https://amzn.to/46dvF82" target="_blank" class="btn">🔍 Browse Audio</a>
-                </div>
-            </div>
-            
+    <!-- Navigation -->
+    <div class="container mb-4">
+        <div class="alert alert-info text-center" style="font-size:1.1rem;">
+            <strong>Nota:</strong> Este sitio recomienda productos y te redirige a Amazon para tu compra. No vendemos directamente, solo seleccionamos lo mejor para ti.
         </div>
     </div>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-gem me-2"></i>Realowomichi
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categories">Categorías</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content" data-aos="fade-right">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" style="max-width:180px; margin-bottom:20px;">
+                    <h1 class="hero-title" style="color:#FF9900;">Guía de compras en Amazon</h1>
+                    <p class="hero-subtitle" style="font-size:1.2rem;">Te ayudamos a elegir los mejores productos en Amazon México. Seleccionamos, analizamos y te llevamos directo a la mejor compra.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#products" class="btn btn-custom btn-primary-custom" style="background:#FF9900; color:#232F3E;">
+                            <i class="fab fa-amazon me-2"></i>Ver recomendaciones
+                        </a>
+                        <a href="#about" class="btn btn-custom btn-outline-custom" style="border-color:#FF9900; color:#FF9900;">
+                            <i class="fas fa-info-circle me-2"></i>¿Cómo funciona?
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="text-center">
+                        <i class="fas fa-cube" style="font-size: 15rem; opacity: 0.2;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Nueva sección: Productos recomendados en Hogar y Cocina -->
+        <section id="productos-hogar" class="products-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title" data-aos="fade-up">Productos recomendados en Hogar y Cocina</h2>
+                    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Haz clic en cualquier producto para comprarlo en Amazon y apoyar este sitio.</p>
+                </div>
+                <div class="row g-4" id="galeria-hogar"></div>
+            </div>
+        </section>
+
+    <!-- Features Section -->
+    <section id="about" class="features-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="feature-title">Selección experta</h3>
+                        <p class="feature-description">Solo recomendamos productos bien valorados y útiles, seleccionados por nuestro equipo.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="feature-title">Opiniones honestas</h3>
+                        <p class="feature-description">Nuestra prioridad es la transparencia: te guiamos con reseñas y comparativas reales.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3 class="feature-title">Compra en Amazon</h3>
+                        <p class="feature-description">Todos los enlaces te llevan directo a Amazon para que compres seguro y rápido.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Productos destacados</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Recomendamos los mejores artículos para ti. Haz clic y compra directamente en Amazon.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-image product-1">
+                            <div class="product-badge">Hot</div>
+                            <div>
+                                <i class="fas fa-microphone-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i><br>
+                                <strong>Smart Speaker</strong><br>
+                                <span style="opacity: 0.8;">Echo Dot 5th Gen + Base</span>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Echo Dot (5ta Gen, 2022) + Base de batería</h3>
+                            <p class="product-description">Bocina inteligente con Alexa y base portátil incluida. Controla tu hogar, escucha música y automatiza tareas con tu voz.</p>
+                            <div class="product-price">Desde $99.99</div>
+                            <a href="https://amzn.to/4m4N6y3" target="_blank" class="btn btn-product">
+                                <i class="fas fa-external-link-alt me-2"></i>Ver producto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tarjeta personalizada tipo ejemplo -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card">
+                        <div class="product-image" style="background: white; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 250px;">
+                            <img src="https://m.media-amazon.com/images/I/81QFQKQ1QwL._AC_UY327_FMwebp_QL65_.jpg" alt="El buda y el chingón" style="max-height: 180px; margin-bottom: 10px;">
+                        </div>
+                        <div class="product-content text-center">
+                            <h3 class="product-title" style="color: #0099cc; font-size: 1.1rem;">El buda y el chingón: Secretos espirituales para alcanzar el éxito en tu trabajo</h3>
+                            <div style="color: #f7c948; font-size: 1.2rem; margin-bottom: 5px;">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span style="color: #0077c2; font-size: 1rem; margin-left: 8px;"><i class="fas fa-check"></i>Prime</span>
+                            </div>
+                            <div class="product-price" style="color: #333; font-size: 1.3rem; margin-bottom: 10px;">$369.00</div>
+                            <a href="#" target="_blank" class="btn btn-warning" style="border-radius: 8px; font-weight: 600;">
+                                <i class="fas fa-arrow-right me-2"></i>Comprar en Amazon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-image product-2">
+                            <div class="product-badge">Popular</div>
+                            <div>
+                                <i class="fas fa-tv" style="font-size: 3rem; margin-bottom: 1rem;"></i><br>
+                                <strong>Streaming Device</strong><br>
+                                <span style="opacity: 0.8;">Roku 4K Ultra HD</span>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Roku 4K Ultra HD</h3>
+                            <p class="product-description">Convierte cualquier TV en Smart TV. Compatible con todos los servicios de streaming, control remoto por voz y calidad 4K HDR.</p>
+                            <div class="product-price">Desde $49.99</div>
+                            <a href="https://amzn.to/4lEdhMf" target="_blank" class="btn btn-product">
+                                <i class="fas fa-external-link-alt me-2"></i>Ver producto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-image product-3">
+                            <div class="product-badge">Best Seller</div>
+                            <div>
+                                <i class="fas fa-tablet-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i><br>
+                                <strong>E-Reader</strong><br>
+                                <span style="opacity: 0.8;">Kindle Paperwhite</span>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Kindle Paperwhite (11va Gen)</h3>
+                            <p class="product-description">La mejor experiencia de lectura digital. Pantalla de 6.8", luz cálida ajustable, resistente al agua y batería de semanas.</p>
+                            <div class="product-price">Desde $139.99</div>
+                            <a href="https://amzn.to/44TSKxz" target="_blank" class="btn btn-product">
+                                <i class="fas fa-external-link-alt me-2"></i>Ver producto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Compra por categoría</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Encuentra exactamente lo que buscas</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3 class="category-title">Tecnología</h3>
+                        <p class="category-description">Gadgets, smartphones, laptops y accesorios de tecnología</p>
+                        <a href="https://amzn.to/3SelBWl" target="_blank" class="btn btn-category">
+                            <i class="fas fa-arrow-right me-2"></i>Ver más
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="category-title">Hogar y Cocina</h3>
+                        <p class="category-description">Electrodomésticos, utensilios y esenciales para el hogar</p>
+                        <a href="https://amzn.to/3WrWdPq" target="_blank" class="btn btn-category">
+                            <i class="fas fa-arrow-right me-2"></i>Ver más
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <h3 class="category-title">Audio y Video</h3>
+                        <p class="category-description">Audífonos, bocinas y dispositivos de entretenimiento</p>
+                        <a href="https://amzn.to/46dvF82" target="_blank" class="btn btn-category">
+                            <i class="fas fa-arrow-right me-2"></i>Ver más
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva sección: Productos recomendados en Hogar y Cocina -->
+    <section id="productos-hogar" class="products-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Productos recomendados en Hogar y Cocina</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Haz clic en cualquier producto para comprarlo en Amazon y apoyar este sitio.</p>
+            </div>
+            <div class="row g-4" id="galeria-hogar"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h4 class="footer-title">
+                        <i class="fas fa-gem me-2"></i>Realowomichi
+                    </h4>
+                    <p style="color:#fff; opacity:0.7;">Este sitio solo recomienda productos y te redirige a Amazon para tu compra. No realizamos ventas directas.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Realowomichi. Solo recomendaciones, no venta directa.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <div class="footer">
-        <p>© 2025 Realowomichi | Premium Quality Products | Trusted Shopping Destination</p>
-    </div>
+    <script>
+        // Galería dinámica de productos recomendados en Hogar y Cocina
+        fetch('capturas_productos/home-garden/productos.json')
+            .then(res => res.json())
+            .then(productos => {
+                const galeria = document.getElementById('galeria-hogar');
+                galeria.innerHTML = productos.map(producto => `
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <a href="${producto.enlace}" target="_blank" style="text-decoration:none;">
+                            <div class="product-card" style="height:100%;">
+                                <div class="product-image" style="background:#fff;display:flex;align-items:center;justify-content:center;height:220px;">
+                                    <img src="capturas_productos/home-garden/${producto.imagen}" alt="${producto.nombre}" style="max-height:180px;max-width:90%;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+                                </div>
+                                <div class="product-content text-center" style="padding:1.2rem;">
+                                    <h3 class="product-title" style="font-size:1rem;color:#232F3E;font-weight:600;">${producto.nombre.replace(/_/g,' ')}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `).join('');
+            });
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add hover effects for product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Galería dinámica de productos recomendados en Hogar y Cocina
+        fetch('capturas_productos/home-garden/productos.json')
+            .then(res => res.json())
+            .then(productos => {
+                const galeria = document.getElementById('galeria-hogar');
+                galeria.innerHTML = productos.map(producto => `
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <a href="capturas_productos/home-garden/${producto.imagen}" target="_blank" style="display:none"></a>
+                        <a href="${producto.enlace}" target="_blank" style="text-decoration:none;">
+                            <div class="product-card" style="height:100%;">
+                                <div class="product-image" style="background:#fff;display:flex;align-items:center;justify-content:center;height:220px;">
+                                    <img src="capturas_productos/home-garden/${producto.imagen}" alt="${producto.nombre}" style="max-height:180px;max-width:90%;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.07);">
+                                </div>
+                                <div class="product-content text-center" style="padding:1.2rem;">
+                                    <h3 class="product-title" style="font-size:1rem;color:#232F3E;font-weight:600;">${producto.nombre.replace(/_/g,' ')}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `).join('');
+            });
+    </script>
 </body>
 </html>
