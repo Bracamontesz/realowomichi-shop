@@ -3,82 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realowomichi - Test</title>
+    <title>Realowomichi - Premium Products Store</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f8f9fa;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
         }
         
-        .hero {
+        .header {
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
-            padding: 50px 20px;
             text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            padding: 80px 20px;
+            margin-bottom: 50px;
         }
         
-        .hero h1 {
+        .header h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            font-weight: bold;
         }
         
-        .hero p {
-            font-size: 1.2rem;
+        .header p {
+            font-size: 1.3rem;
             margin-bottom: 2rem;
         }
         
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+        }
+        
+        .product-1 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .product-2 { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .product-3 { background: linear-gradient(135deg, #27ae60, #229954); }
+        .product-4 { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .product-5 { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        .product-6 { background: linear-gradient(135deg, #1abc9c, #16a085); }
+        
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .product-content {
+            padding: 30px;
+        }
+        
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .product-description {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        
         .btn {
+            display: inline-block;
             background: #e74c3c;
             color: white;
             padding: 15px 30px;
             text-decoration: none;
-            border-radius: 25px;
-            display: inline-block;
-            margin: 10px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
         }
         
-        .product {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin: 20px 0;
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+        
+        .footer p {
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .header p { font-size: 1.1rem; }
+            .products-grid { grid-template-columns: 1fr; gap: 20px; }
+            .product-content { padding: 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>Realowomichi</h1>
-        <p>Premium Products Store</p>
-        <a href="#products" class="btn">Ver Productos</a>
+    <div class="header">
+        <h1>🏪 Realowomichi</h1>
+        <p>Premium Products Store - Quality Guaranteed</p>
     </div>
     
-    <div id="products">
-        <div class="product">
-            <h3>Echo Dot (5th Gen)</h3>
-            <p>Smart speaker with Alexa. From $99.99</p>
-            <a href="https://amzn.to/4m4N6y3" target="_blank" class="btn">Ver en Amazon</a>
-        </div>
-        
-        <div class="product">
-            <h3>Roku Streaming Device 4K</h3>
-            <p>Transform any TV into a smart TV. From $49.99</p>
-            <a href="https://amzn.to/4lEdhMf" target="_blank" class="btn">Ver en Amazon</a>
-        </div>
-        
-        <div class="product">
-            <h3>Kindle Paperwhite</h3>
-            <p>Ultimate digital reading experience. From $139.99</p>
-            <a href="https://amzn.to/44TSKxz" target="_blank" class="btn">Ver en Amazon</a>
+    <div class="container">
+        <div class="products-grid">
+            
+            <!-- Producto 1: Echo Dot -->
+            <div class="product-card">
+                <div class="product-image product-1">
+                    🎤
+                    <div class="badge">HOT</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Echo Dot (5th Gen) + Battery Base</h3>
+                    <p class="product-description">Smart speaker with Alexa, portable battery base included. Voice control, music streaming, and smart home automation anywhere.</p>
+                    <div class="product-price">From $99.99</div>
+                    <a href="https://amzn.to/4m4N6y3" target="_blank" class="btn">🛒 Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Producto 2: Roku -->
+            <div class="product-card">
+                <div class="product-image product-2">
+                    📺
+                    <div class="badge">POPULAR</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Roku Streaming Device 4K</h3>
+                    <p class="product-description">Transform any TV into a smart TV. Compatible with all streaming services, voice remote, and 4K HDR quality.</p>
+                    <div class="product-price">From $49.99</div>
+                    <a href="https://amzn.to/4lEdhMf" target="_blank" class="btn">🛒 Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Producto 3: Kindle -->
+            <div class="product-card">
+                <div class="product-image product-3">
+                    📚
+                    <div class="badge">BEST SELLER</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Kindle Paperwhite (11th Gen)</h3>
+                    <p class="product-description">Ultimate digital reading experience. 6.8" display, adjustable warm light, waterproof design, and weeks of battery life.</p>
+                    <div class="product-price">From $139.99</div>
+                    <a href="https://amzn.to/44TSKxz" target="_blank" class="btn">🛒 Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Categoría 1: Technology -->
+            <div class="product-card">
+                <div class="product-image product-4">
+                    💻
+                    <div class="badge">CATEGORY</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Technology Collection</h3>
+                    <p class="product-description">Latest gadgets, smartphones, laptops, and tech accessories for modern lifestyle and productivity.</p>
+                    <div class="product-price">Explore Now</div>
+                    <a href="https://amzn.to/3SelBWl" target="_blank" class="btn">🔍 Browse Tech</a>
+                </div>
+            </div>
+            
+            <!-- Categoría 2: Home & Kitchen -->
+            <div class="product-card">
+                <div class="product-image product-5">
+                    🏠
+                    <div class="badge">CATEGORY</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Home & Kitchen</h3>
+                    <p class="product-description">Premium appliances, kitchen tools, and home essentials for your perfect home and cooking experience.</p>
+                    <div class="product-price">Discover More</div>
+                    <a href="https://amzn.to/3WrWdPq" target="_blank" class="btn">🔍 Browse Home</a>
+                </div>
+            </div>
+            
+            <!-- Categoría 3: Audio & Video -->
+            <div class="product-card">
+                <div class="product-image product-6">
+                    🎧
+                    <div class="badge">CATEGORY</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Audio & Video</h3>
+                    <p class="product-description">High-quality headphones, speakers, and entertainment devices for amazing audio and visual experiences.</p>
+                    <div class="product-price">Listen Now</div>
+                    <a href="https://amzn.to/46dvF82" target="_blank" class="btn">🔍 Browse Audio</a>
+                </div>
+            </div>
+            
         </div>
     </div>
     
-    <p style="text-align: center; margin-top: 50px; color: #666;">
-        © 2025 Realowomichi. Premium Quality Products
-    </p>
+    <div class="footer">
+        <p>© 2025 Realowomichi | Premium Quality Products | Trusted Shopping Destination</p>
+    </div>
 </body>
 </html>
